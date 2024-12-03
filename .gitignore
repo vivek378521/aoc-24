@@ -1,0 +1,16 @@
+# Ignore the target directory where Cargo builds the project
+target/
+
+# Ignore Cargo's lock file (optional, if you don't want to track it)
+Cargo.lock
+
+# Ignore IDE specific files (you can modify this based on your IDE)
+.idea/
+.vscode/
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore Rust's default build artifacts (e.g., release/debug builds, temporary files)
+*.rs.bk

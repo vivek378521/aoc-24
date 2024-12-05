@@ -20,13 +20,11 @@ total = 0
 total2 = 0
 
 
-def fix_update(rules, array):
+def fix_array(rules, array):
     filtered_rules = defaultdict(set)
     for i in array:
         filtered_rules[i] = set(rules[i]).intersection(set(array))
 
-    # ordered_items = sorted(filtered_rules.items(), key=lambda x: len(x[1]), reverse=True)
-    # ordered_keys = [i[0] for i in ordered_items]
     ordered_keys = sorted(
         filtered_rules, key=lambda k: len(filtered_rules[k]), reverse=True
     )
@@ -48,7 +46,7 @@ for array in arrays:
 
 for array in arrays:
     if not is_valid(rules, array):
-        fix_update_arr = fix_update(rules, array)
+        fix_update_arr = fix_array(rules, array)
         total2 += fix_update_arr[len(array) // 2]
 
 
